@@ -37,7 +37,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string DynastyStartYear = @"";
       public const string DynastyYearRegex = @"^[.]";
       public static readonly string DateYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}))";
-      public const string WeekDayRegex = @"(?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?)\s?";
+      public const string WeekDayRegex = @"(?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?)";
+      public static readonly string WeekDayStartEnd = $@"(^(の)?{WeekDayRegex}|{WeekDayRegex}$)";
       public const string LunarRegex = @"(农历|初一|正月|大年|旧暦)";
       public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本|今週|そ)(的|の)?({WeekDayRegex}|日)";
       public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后|先週|最後)(的|の)?({WeekDayRegex}|日)";

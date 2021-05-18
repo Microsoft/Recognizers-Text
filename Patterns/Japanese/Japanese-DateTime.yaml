@@ -33,7 +33,10 @@ DateYearInCJKRegex: !nestedRegex
   def: (?<yearCJK>({ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}))
   references: [ZeroToNineIntegerRegexCJK]
 WeekDayRegex: !simpleRegex
-  def: (?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?)\s?
+  def: (?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?)
+WeekDayStartEnd: !nestedRegex
+  def: (^(の)?{WeekDayRegex}|{WeekDayRegex}$)
+  references: [WeekDayRegex]
 LunarRegex: !simpleRegex
   def: (农历|初一|正月|大年|旧暦)
 DateThisRegex: !nestedRegex
