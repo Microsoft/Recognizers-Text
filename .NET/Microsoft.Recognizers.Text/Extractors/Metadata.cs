@@ -24,6 +24,8 @@
 
         public bool IsMealtime { get; set; } = false;
 
+        public bool IsDurationDateWithWeekday { get; set; } = false;
+
         public Metadata Clone()
         {
             return (Metadata)MemberwiseClone();
